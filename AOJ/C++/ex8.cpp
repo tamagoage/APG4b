@@ -2,7 +2,8 @@
 using namespace std;
 
 int main() {
-    int p, price;
+    int p, price,  N;
+    string text;
     cin >> p;
 
   // パターン1
@@ -12,13 +13,10 @@ int main() {
 
   // パターン2
     if (p == 2) {
-    string text;
     cin >> text >> price;
+    cout << text << "!" << endl;
     }
-
-    int N;
     cin >> N;
 
-    cout << "text" << "!" << endl;
   cout << price * N << endl;
 }
