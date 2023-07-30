@@ -14,19 +14,19 @@ int main() {
     vector<vector<char>> game_result(N, vector<char>(N , '-'));
 
     for (int i = 0; i < M; i++){
-        for (int j = 0; j < M; j++){
-            if (game_result.at(i) == A.at(i) && game_result.at(j) == B.at(j)){
-                game_result.at(i).at(j) = 'o';
-                game_result.at(j).at(i) = 'x';
-            }
-        }
+        A.at(i)--; B.at(i)--;
+        game_result.at(A.at(i)).at(B.at(i)) = 'o';
+        game_result.at(B.at(i)).at(A.at(i)) = 'x';
     }
 
-    for (int i = 0; i < M; i++){
-        for (int j = 0; j < M; j++){
-            cout << game_result.at(i).at(j) << " ";
+    for (int i = 0; i < N; i++){
+        for (int j = 0; j < N; j++){
+            cout << game_result.at(i).at(j);
+            if (j == N - 1){
+                cout << endl;
+            } else {
+                cout << " ";
+            }
         }
-        
-    }
-    
+    }    
 }
