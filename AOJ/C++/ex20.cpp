@@ -32,4 +32,4 @@ int main() {
         cout << count_report_num(children, i) << endl;
     }
 }
-
+// gitテスト
