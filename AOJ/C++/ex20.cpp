@@ -1,3 +1,5 @@
+// 全くわからん
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -5,7 +7,18 @@ using namespace std;
 // childrenは組織の関係を表す2次元配列(参照渡し)
 int count_report_num(vector<vector<int>> &children, int x) {
     // (ここに追記して再帰関数を実装する)
-    
+    // ベースケース
+    if (children.at(x).size() == 0) {
+        return 0; //子要素がない組織は報告書をそのまま返す
+    }
+
+    // 再帰ステップ
+    int max_receive_report = 0;
+    for (int parent_have : children.at(x)) {
+        max_receive_report += count_report_num(children, parent_have);
+    }
+    max_receive_report += 1;
+    return max_receive_report;
 }
 
 // これ以降の行は変更しなくてよい
