@@ -2,19 +2,19 @@
 using namespace std;
 
 // 以下に、24時間表記の時計構造体 Clock を定義する
+struct Clock
+{
+    int hour;
+    int minute;
+    int second;
 
-// Clock構造体のメンバ変数を書く
-//   int hour    時間を表す (0~23の値をとる)
-//   int minute  分を表す   (0~59の値をとる)
-//   int second  秒を表す   (0~59の値をとる)
-
-// メンバ関数 set の定義を書く
-//   関数名: set
-//   引数: int h, int m, int s (それぞれ時、分、秒を表す)
-//   返り値: なし
-//   関数の説明:
-//     時・分・秒を表す3つの引数を受け取り、
-//     それぞれ、メンバ変数 hour, minute, second に代入する
+    void set(int h, int m, int s)
+    {
+        hour = h;
+        minute = m;
+        second = s;
+    }
+}
 
 // メンバ関数 to_str の定義を書く
 //   関数名: to_str
@@ -40,7 +40,8 @@ using namespace std;
 // ここから先は変更しない
 // -------------------
 
-int main()
+int
+main()
 {
     // 入力を受け取る
     int hour, minute, second;
